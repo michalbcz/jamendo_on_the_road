@@ -65,6 +65,26 @@ function initialize() {
 
     showCurrentUserLocation();
 
+    $(function() {
+
+	    var app = new Sammy(function() {
+
+	    	this.get("#/musify/route/from/:from/to/:to", function() {
+	    		var from = this.params['from'];
+	    		var to = this.params['to'];
+
+	    		$("#from").val(from);
+	    		$("#to").val(to);
+
+	    		calcRoute();  		
+	    	});
+
+	    });
+
+	    app.run();
+
+    });
+
 }
 
 function showCurrentUserLocation() {
