@@ -61,6 +61,8 @@ function initialize() {
 
     });
 
+    $("#from").focus();
+
     showCurrentUserLocation();
 
 }
