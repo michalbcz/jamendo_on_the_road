@@ -11,6 +11,7 @@ body {
 
 body, textarea {
 	font-family: Verdana, Helvetica, Arial; 	
+	font-size: 20px;
 }
 
 #map-canvas {
@@ -30,25 +31,29 @@ body, textarea {
 	color: #fff;
 	z-index: 10000;
 	margin: 0.5em;
+	max-height: 500px;
 }
 
 .app-panel-background {
-	opacity: 0.2;
+	opacity: 0.8;
 	background-color: #333;
 	padding: 0.5em;
 	z-index: 1000;
-	max-height: 300px;
+	max-height: 500px;
 }
 
 button {
 	cursor: pointer;
-	background: none;
+	border-style: solid;
 	border: 1px solid #ffffff;
 	color: #ffffff;	
+	background-color: #555;
+
 }
 
 button:hover {
 	border: 1px solid #ccd;
+	background-color: #888;
 }
 
 form label {
@@ -60,7 +65,15 @@ form label {
 	float: left;
 }
 
+
 #direction-bar button.send {
-	width: 130px;
-	height: 50px;
+	height: 55px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+    width: 120px;
+}
+
+.fields .field {
+	margin-top: 5px;
 }
