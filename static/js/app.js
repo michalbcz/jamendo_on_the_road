@@ -271,7 +271,8 @@ function playSong(latitude, longitude) {
 				var songData = song
 
 				// notify about playing song
-				$(document).trigger('playingSong', [songData]);
+				var artistData = {};
+				$(document).trigger('playingSong', {song: songData, artist: artistData});
 			});
 
 		});
@@ -282,10 +283,16 @@ function playSong(latitude, longitude) {
 
 }
 
-function showSongPlaying(event, song) {
+function showSongPlaying(event, data) {
 
-	console.info("Show song ", song, " information panel");
-	var $playing = $("#playing");
-	$playing.text("Artist: " + song.artist_name + " Song name:" + song.name);
+	console.info("Show song ", data, " information panel");
+	var $bandInfoBox = $("#band-info-box");
+	var $bandInfo = $bandInfoBox.find(".band-info");
+	$bandInfo.find(".band-name .value").text(data.song.artist_name);
+	$bandInfo.find(".song-name .value").text(data.song.name);
+	$bandInfo.find(".band-country .value").text();
+
+	var $songAlbumPicture = $bandInfoBox.find(".band-picture img");
+	$songAlbumPicture.replaceWith('<img src="' + data.song.album_image + '"/>');
 
 }
